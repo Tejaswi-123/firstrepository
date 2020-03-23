@@ -1,4 +1,5 @@
 package topicinterface;
+
 interface BirdEat {
     void eat();
  }
@@ -11,7 +12,5 @@ interface BirdEat {
     }
     public void fly() {
        System.out.println("Bird is flying");
-    }
-
-    
- }
+    }   
+  }
