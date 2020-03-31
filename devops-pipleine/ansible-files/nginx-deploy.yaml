@@ -14,7 +14,7 @@
       become: yes
     - name: copy the nginx config file and restart nginx
       copy:
-        src: /etc/ansible/nginx-files/static-site.cfg
+        src: /var/lib/jenkins/workspace/seedjob/devops-ansible/devops-pipleine/ansible-files/nginx-files/static-site.cfg
         dest: /etc/nginx/sites-available/static-site.cfg
       become: yes
     - name: create symlink
@@ -25,7 +25,7 @@
       become: yes
     - name: copy the content of the web site
       copy:
-        src: /etc/ansible/nginx-files/static-site-src/
+        src: /var/lib/jenkins/workspace/seedjob/devops-ansible/devops-pipleine/ansible-files/nginx-files/static-site-src/
         dest: /home/nginx/static-site
     - name: restart nginx
       service:
