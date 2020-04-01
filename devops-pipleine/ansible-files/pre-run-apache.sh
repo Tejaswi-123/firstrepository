@@ -1,3 +1,4 @@
+#!/bin/sh
 export WORKSPACE="/var/lib/jenkins/workspace/samplejob"
 export ANSIBLE_LOG_PATH="/var/lib/jenkins/workspace/samplejob/ansible.log"
 cp -r $WORKSPACE/devops-ansible/devops-pipleine/ansible-files/* /etc/ansible/ 
