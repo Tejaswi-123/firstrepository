@@ -1,25 +1,14 @@
 ---
 - hosts: all
-  
   tasks:
-    - name: install apache
-      apt: name=apache update_cache=yes state=latest
+    - name: install apache2
+      apt: name=apache2 update_cache=yes state=latest
 
     - name: enabled mod_rewrite
-      apache_module: name=rewrite state=present
+      apache2_module: name=rewrite state=present
       notify:
-        - restart apache
-
-    - name: apache listen on port 8081
-      lineinfile: dest=/etc/apache/ports.conf regexp="^Listen 80" line="Listen 8081" state=present
-      notify:
-        - restart apache
-
-    - name: apache virtualhost on port 8081
-      lineinfile: dest=/etc/apache/sites-available/000-default.conf regexp="^<VirtualHost \*:80>" line="<VirtualHost *:8081>" state=present
-      notify:
-        - restart apache
+        - restart apache2
 
   handlers:
-    - name: restart apache
-      service: name=apache state=restarted
+    - name: restart apache2
+      service: name=apache2 state=restarted
