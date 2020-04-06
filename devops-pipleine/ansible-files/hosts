@@ -1,8 +1,8 @@
 [blrweb]
-172.17.170.85
+172.18.50.115
 
 [blrdb]
-172.17.170.85
+172.18.50.115
 
 #groups of groups : blr group is a group of blrweb and  blrdb groups
 [blr:children]
