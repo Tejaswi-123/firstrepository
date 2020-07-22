@@ -1,12 +1,9 @@
 ---
 - hosts: all
   tasks:
-<<<<<<< HEAD
     - name: ensure nginx is removed
       apt: name=nginx state=absent
       become: yes
-=======
->>>>>>> 45cfb362abb9ab73e3d74d34fbc71f4aa7a70d8e
     - name: ensure nginx is at the latest version
       apt: name=nginx state=latest
       become: yes
@@ -17,11 +14,7 @@
       become: yes
     - name: copy the nginx config file and restart nginx
       copy:
-<<<<<<< HEAD
         src: /etc/ansible/nginx-files/static-site.cfg
-=======
-        src: /root/nginx-files/static-site.cfg
->>>>>>> 45cfb362abb9ab73e3d74d34fbc71f4aa7a70d8e
         dest: /etc/nginx/sites-available/static-site.cfg
       become: yes
     - name: create symlink
@@ -32,11 +25,7 @@
       become: yes
     - name: copy the content of the web site
       copy:
-<<<<<<< HEAD
         src: /etc/ansible/nginx-files/static-site-src/
-=======
-        src: /root/nginx-files/static-site-src/
->>>>>>> 45cfb362abb9ab73e3d74d34fbc71f4aa7a70d8e
         dest: /home/nginx/static-site
     - name: restart nginx
       service:
